@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="all-tasks">
+        <h2 class="task-list-title">My&nbsp;tasks&nbsp;&nbsp;<i class="fa-solid fa-note-sticky"></i></h2>
+        <ul class="task-list" data-lists></ul>
+        <form action="" data-new-list-form>
+            <input name="new-list-input" type="text" class="new list" placeholder="Add new list" aria-label="new task list" autocomplete="off" data-new-list-input>
+            <button class="btn list" aria-label="create new list">+</button>
+        </form>
+        <button class="tabs-btn" data-tabs-btn>My&nbsp;Tabs</button>
+    </div>
+
+    <div class="todo-list-container">
+        <div class="todo-list" data-tasks-list-display>
+            <div class="todo-header">
+                <h3 class="list-title" data-list-title></h3>
+                <p class="task-count" data-list-count></p>
+            </div>
+            <div class="todo-body">
+                <div class="tasks" data-tasks-container></div>
+                <div class="create-task">
+                    <form action="" data-new-task-form>
+                        <input name="new-task-input" type="text" class="new task" placeholder="Add new task" aria-label="new task name" autocomplete="off" data-new-task-input>
+                        <button class="btn create" aria-label="create new task">+</button>
+                    </form>
+                </div>
+                <div class="delete-task">
+                    <button class="btn delete" data-clear-completed-tasks>Clear&nbsp;completed&nbsp;&nbsp;<i class="fa-solid fa-circle-minus"></i></button>
+                    <button class="btn delete" data-delete-list>Delete&nbsp;list&nbsp;&nbsp;<i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs-list-container" style="display: none;" data-tabs-list-display>
+            <div class="tabs-header">
+                <h3 class="tabs-title">Saved&nbsp;Tabs&nbsp;&nbsp;<i class="fa-solid fa-window-restore"></i></h3>
+                <p class="tabs-count" data-tabs-count></p>
+            </div>
+            <div class="tabs-body">
+                <div class="tabs" data-tabs-container></div>
+                <div class="create-tab">
+                    <form action="" data-new-tab-form>
+                        <input name="new-tab-input" type="text" class="new-tab-input" placeholder="Name this tab" aria-label="new tab name" autocomplete="off" data-new-tab-input>
+                        <button class="btn create" aria-label="save new tab" data-tabs-save>+</button>
+                    </form>
+                </div>
+                <div class="delete-task">
+                    <button class="btn delete" data-tabs-delete>Delete&nbsp;selected&nbsp;tab&nbsp;&nbsp;<i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <template id="task-template">
+        <div class="task">
+            <input type="checkbox">
+            <label>
+                <span class="custom-checkbox"></span>
+            </label>
+        </div>
+    </template>
+
+    <template id="tab-template">
+        <div class="tab">
+            <input class="tabs-checkbox" type="checkbox">
+            <label>
+                <a target="_blank" href=""></a>
+                <i class="fa-solid fa-up-right-from-square"></i>
+            </label>
+        </div>
+    </template>
+
+</body>
+</html>

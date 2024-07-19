@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "version": "1.0.1.1",
+    "name": "Clip Note",
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "/logos/logo-icon.png"
+    },
+    "icons": {
+        "500": "/logos/logo-theme-dark.png"
+    },
+    "permissions": [
+        "tabs",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+    ]
+}

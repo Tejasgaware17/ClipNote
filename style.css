@@ -1,0 +1,382 @@
+:root {
+    /* || COLORS         */
+    --clr-primary: rgb(255, 158, 73);
+    --clr-light: #f4f4f4;
+    --clr-fade: #9c9c9c;
+    --clr-dark: #333;
+    --clr-warning: #971f1f;
+
+    /* || SPACING        */
+    --spacing: 1.7rem;
+
+    /* || BORDER-RADIUS  */
+    --bd-rad: 5px;
+
+    /* || CHECKBOX       */
+    --chk-box-size: 0.75rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    border-radius: 4px;
+}
+  
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: #dcdcdc;
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+body {
+    border: 3px solid cyan;
+    min-width: 550px;
+    max-width: 550px;
+    min-height: 600px;
+    margin: 0;
+    padding: 2rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    background-color: var(--clr-primary);
+
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    gap: 5px;
+    color: var(--clr-light);
+}
+
+.task-list {
+    padding-left: 1.5rem;
+    line-height: 1.5;
+    list-style: circle;
+    font-size: 1rem;
+    font-weight: 500;
+    max-height: 190px;
+    overflow-y: scroll;
+}
+
+.task-list::-webkit-scrollbar-track {
+    background: #ffb56aa8;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+    background: #e7e7e775;
+}
+
+.list-name {
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 200ms ease;
+}
+
+.list-name:hover {
+    opacity: 0.9;
+}
+
+.active-list {
+    font-weight: 700;
+    opacity: 1;
+}
+
+form {
+    display: flex;
+}
+
+.btn {
+    cursor: pointer;
+    background: 0;
+    border: 0;
+    color: inherit;
+    font-size: 1.2rem;
+}
+
+.btn.list {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-right: 0.25rem;
+    transition: opacity 50ms ease-in;
+}
+
+.btn.list:hover {
+    opacity: 0.7;
+}
+
+.new, .new-tab-input {
+    background: transparent;
+    border: 0;
+    color: inherit;
+    border-bottom: 1px solid currentColor;
+    font-size: inherit;
+    outline: none;
+    padding: 0.25em;
+
+    transition: border-bottom 150ms ease-in;
+    order: 2;
+}
+
+.new:focus {
+    border-bottom-width: 2px;
+}
+.new:focus::placeholder {
+    color: var(--clr-light);
+    opacity: 0.5;
+}
+.all-tasks form input::-webkit-input-placeholder {
+    opacity: 0.9;
+    font-weight: 600;
+    color: var(--clr-light);
+}
+
+.new.list {
+    font-size: 0.9rem;
+    width: 120px;
+}
+
+.new.task {
+    margin-bottom: 0;
+    width: 70%;
+}
+
+.todo-list, .tabs-list-container {
+    margin: 0 1rem;
+    color: var(--clr-dark);
+    background: #fff;
+    border-radius: var(--bd-rad);
+    box-shadow: 2px 2px 5px #333;
+    transition: 200ms ease-in-out;
+}
+
+.todo-header, .tabs-header {
+    padding: var(--spacing);
+    background: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: var(--bd-rad) var(--bd-rad) 0 0;
+}
+
+.list-title, .tabs-title{
+    margin: 0;
+}
+
+.task-count, .tabs-count {
+    margin: 0;
+    font-size: 0.7rem;
+}
+
+.todo-body, .tabs-body {
+    position: relative;
+    padding: var(--spacing);
+}
+
+.tasks {
+    padding: 10px;
+    max-height: 250px;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+}
+
+.task, .tab {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.task::after, .tab::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -0.7em;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.1;
+}
+
+.task label {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+    position: relative;
+}
+
+.create-task .create,
+.create-tab .create {
+    color: var(--clr-primary);
+    font-weight: 800;
+}
+
+.create-task form input:focus::placeholder {
+    color: var(--clr-fade);
+}
+
+[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.custom-checkbox {
+    display: inline-block;
+    min-height: var(--chk-box-size);
+    min-width: var(--chk-box-size);
+    cursor: pointer;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    margin-right: var(--chk-box-size);
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+}
+
+.task:hover .custom-checkbox,
+[type="checkbox"]:focus + label .custom-checkbox {
+    transform: scale(1.2);
+    color: var(--clr-primary);
+}
+
+[type="checkbox"]:checked + label .custom-checkbox {
+    background: var(--clr-primary);
+    border-color: var(--clr-primary);
+    box-shadow: inset 0 0 0px 2px white;
+}
+
+[type="checkbox"]:checked + label {
+    opacity: 0.6;
+}
+
+.task label::after {
+    content: "";
+    position: absolute;
+    left: 1.5em;
+    right: 0;
+    top: calc(50% - 1.5px);
+    height: 2px;
+    background: currentColor;
+    transform: scale(0);
+    transform-origin: right;
+    transition: transform 350ms ease-out;
+}
+
+[type="checkbox"]:checked + label::after {
+    transform: scale(1);
+    transform-origin: left;
+}
+
+.delete-task {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: -40px;
+    color: var(--clr-light);
+}
+
+.btn.delete {
+    font-size: 0.8rem;
+    font-weight: 600;
+    opacity: 0.8;
+    transition: color 300ms ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn.delete i {
+    font-size: 0.9rem;
+}
+
+.btn.delete:hover {
+    color: var(--clr-warning);
+}
+
+.tabs {
+    max-height: 210px;
+    overflow-y: scroll;
+}
+
+.tabs-checkbox {
+    opacity: 1;
+    position: relative;
+    cursor: pointer;
+}
+
+.tab label {
+    position: absolute;
+    padding: 0 0 0 10px;
+    top: 0em;
+    margin: 0 10px;
+    font-size: 0.8rem;
+    font-weight: 400;
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.tab label :any-link {
+    color: var(--clr-dark);
+}
+
+.tab i {
+    font-size: 0.8em;
+}
+.tab-save-delete {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.tab-save-delete button {
+    border: none;
+    height: 30px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transform: scale(1);
+    transition: transform 200ms ease;
+}
+
+.tab-save-delete button:hover {
+    transform: scale(1.02);
+}
+
+.tabs-btn {
+    margin: 1rem 0;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 50px;
+    color: var(--clr-light);
+    background: var(--clr-dark);
+    transition: 200ms ease-in-out;
+}
+
+.tabs-btn:hover {
+    background: #4a4a4a;
+}
+
+.tabs-btn.active {
+    color: var(--clr-dark);
+    background-color: var(--clr-light);
+}

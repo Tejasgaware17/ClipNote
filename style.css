@@ -16,24 +16,18 @@
     --chk-box-size: 0.75rem;
 }
 
-/* width */
+/* SCROLLBAR */
 ::-webkit-scrollbar {
     width: 3px;
 }
-  
-  /* Track */
 ::-webkit-scrollbar-track {
     background: #f4f4f4;
     border-radius: 4px;
 }
-  
-  /* Handle */
 ::-webkit-scrollbar-thumb {
     border-radius: 4px;
     background: #dcdcdc;
 }
-  
-  /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
@@ -75,10 +69,10 @@ body {
     overflow-y: scroll;
 }
 
+/* SCROLLBAR-LISTS */
 .task-list::-webkit-scrollbar-track {
     background: #ffb56aa8;
 }
-
 .task-list::-webkit-scrollbar-thumb {
     background: #e7e7e775;
 }

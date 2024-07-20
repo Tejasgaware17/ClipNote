@@ -1,13 +1,13 @@
 {
     "manifest_version": 3,
     "version": "1.0.1.1",
-    "name": "Clip Note",
+    "name": "Clip Tab",
     "action": {
         "default_popup": "index.html",
         "default_icon": "/logos/logo-icon.png"
     },
     "icons": {
-        "500": "/logos/logo-theme-dark.png"
+        "500": "/logos/logo-dark.png"
     },
     "permissions": [
         "tabs",

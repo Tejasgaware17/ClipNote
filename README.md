@@ -1,7 +1,7 @@
 # 🚀 ClipNote: The Minimal Chrome Productivity Tool
 
 [![GitHub Stars](https://img.shields.io/github/stars/Tejasgaware17/ClipNote?style=social)](https://github.com/Tejasgaware17/ClipNote)
-[![License](https://img.shields.io/github/license/Tejasgaware17/ClipNote)](LICENSE)
+[![License](https://img.shields.io/github/license/Tejasgaware17/ClipNote?color=0A66C2)](LICENSE)
 
 A clean, **lightweight Chrome extension** for saving quick notes, managing tasks, and bookmarking important tabs.
 

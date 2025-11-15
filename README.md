@@ -64,9 +64,10 @@ The extension will now be available in your Chrome toolbar.
 
 ## 📸 Screenshots
 
-| Managing Notes | Managing Saved Tabs | Browser View |
-| :---: | :---: | :---: |
-| <img src="assets/screenshot-1.png" width="300" alt="Screenshot showing the notes management interface of ClipNote" /> | <img src="assets/screenshot-2.png" width="300" alt="Screenshot showing the interface for adding and managing saved tabs" /> | <img src="assets/screenshot-3.png" width="300" alt="Screenshot showing the extension popup view in the Chrome browser" /> |
+<p align="center">
+    <img src="assets/screenshot-1.png" width="440" alt="ClipNote main UI showing note list and tabs" />
+    &nbsp;&nbsp;&nbsp;&nbsp; <img src="assets/screenshot-2.png" width="440" alt="Add and remove note UI in ClipNote" />
+</p>
 
 ---
 
